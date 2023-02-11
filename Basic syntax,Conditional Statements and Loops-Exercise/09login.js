@@ -5,16 +5,19 @@ function login(input) {
         password += username[i];
     }
     let incorrectAttempts = 0;
-    for (let i = 1; i < input.length; i++) {
+    for (let i = 1; i <= 4; i++) {
         if (input[i] === password) {
             console.log(`User ${username} logged in.`);
+            break;
         } else {
-            console.log('Incorrect password. Try again.');
             incorrectAttempts ++;
-            if (incorrectAttempts === 4) {
+            if(incorrectAttempts < 4){
+                console.log('Incorrect password. Try again.');
+            }else {
                 console.log(`User ${username} blocked!`);
             }
         }
+        
     }
 }
 

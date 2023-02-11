@@ -12,7 +12,7 @@ function login(input) {
             console.log('Incorrect password. Try again.');
             incorrectAttempts ++;
             if (incorrectAttempts === 4) {
-                console.log(`User ${username} blocked.`);
+                console.log(`User ${username} blocked!`);
             }
         }
     }

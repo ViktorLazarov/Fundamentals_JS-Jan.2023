@@ -5,6 +5,8 @@
 //     }
 //     console.log(output);
 // }
+
+
 function reverseInPlace(arr) {
     for (let i = 0; i < arr.length / 2; i++) {
         let temp = arr[i];

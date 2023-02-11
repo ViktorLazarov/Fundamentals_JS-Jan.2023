@@ -1,10 +1,10 @@
 // function reverseArray(n, arr) {
-//     let reversedArr = [];
+//     let tempArr = [];
 //     let buffIndex = 0;
 //     let output = '';
 //     for (let i = n-1; i >= 0; i--) {
-//         reversedArr[buffIndex] = arr[i];
-//         output += reversedArr[buffIndex] + ' ';
+//         tempArr[buffIndex] = arr[i];
+//         output += tempArr[buffIndex] + ' ';
 //         buffIndex ++;
 //     }
 //     console.log(output);

@@ -2,7 +2,7 @@ function mathPower(num, power) {
     let result = num ** power;
     print(result)
 
-
+    
 }
 
 function print(str) {

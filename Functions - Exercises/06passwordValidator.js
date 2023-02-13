@@ -32,11 +32,7 @@ function passwordValidator(password) {
                 count++;
             }
         }
-
-        if (count >= 2) {
-            return true
-        }
-        return false
+        return count >= 2
     }
 
     // "Password must consist only of letters and digits"
@@ -64,13 +60,13 @@ function passwordValidator(password) {
     function checkForLowerCase(char) {
         return char >= 97 && char <= 122
     }
+
     function checkForUpperCase(char) {
         return char >= 65 && char <= 90
-
     }
+
     function checkForNumbers(char) {
-        return char >= 48 && char <= 57
-          
+        return char >= 48 && char <= 57      
     }
 }
 

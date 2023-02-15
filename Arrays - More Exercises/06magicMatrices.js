@@ -3,7 +3,7 @@ function magicMatrices(arr) {
     let magicNumber = 0;
 
     for (let i = 0; i < arr.length; i++) {
-        magicNumber += arr[0][i];
+        magicNumber += Number(arr[0][i]);
     }
 
  
@@ -11,8 +11,8 @@ function magicMatrices(arr) {
         let rowSum = 0;
         let colSum = 0;
         for (let j = 0; j < arr[i].length; j++) {
-            rowSum += arr[i][j];
-            colSum += arr[j][i]; 
+            rowSum += Number(arr[i][j]);
+            colSum += Number(arr[j][i]); 
         }
         if (rowSum == magicNumber && colSum == magicNumber) {
             isMagic = true;

@@ -1,17 +1,25 @@
 function magicMatrices(arr) {
     let isMagic = false;
+    let magicNumber = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        magicNumber += arr[0][i];
+    }
+
+ 
     for (let i = 0; i < arr.length; i++) {
         let rowSum = 0;
         let colSum = 0;
         for (let j = 0; j < arr[i].length; j++) {
             rowSum += arr[i][j];
-            colSum += arr[j][i];
-            if (rowSum === colSum) {
-                isMagic = true;
-            } else {
-                isMagic = false;
-            }
+            colSum += arr[j][i]; 
         }
+        if (rowSum == magicNumber && colSum == magicNumber) {
+            isMagic = true;
+        } else {
+            isMagic = false;
+        }
+
         
     }
     console.log(isMagic);

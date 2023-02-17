@@ -2,6 +2,7 @@ function sorting(inputArr) {
     let result = [];
     let iterations = inputArr.length;
     inputArr.sort((a,b) => a - b);
+    
     // for (let i = 0; i < iterations; i++) {
     //     if (i % 2 === 0) {
     //         inputArr.sort((a, b)=> b - a)

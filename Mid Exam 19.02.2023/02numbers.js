@@ -39,7 +39,7 @@ function numbers(inputArr) {
     }
 
     function collapse(numbersarr,value) {
-        return numbersarr.filter(x => x > value);
+        return numbersarr.filter(x => x >= value);
     }
 
 

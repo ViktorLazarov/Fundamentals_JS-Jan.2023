@@ -63,17 +63,17 @@ function chatLogger(inputArr) {
 }
 
 
-// chatLogger((["Chat Hello",
-//              "Chat darling",
-//              "Edit darling Darling",
-//              "Spam how are you",
-//              "Delete Darling",
-//              "end"]))
-// console.log('*****************');
-// chatLogger(["Chat Hello",
-//              "Delete John",
-//              "Pin Hi",
-//              "end"])
+chatLogger((["Chat Hello",
+             "Chat darling",
+             "Edit darling Darling",
+             "Spam how are you",
+             "Delete Darling",
+             "end"]))
+console.log('*****************');
+chatLogger(["Chat Hello",
+             "Delete John",
+             "Pin Hi",
+             "end"])
 console.log('*****************');
 chatLogger(["Spam Let's go to the zoo",
             "Chat John",

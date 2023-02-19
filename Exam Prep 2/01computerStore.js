@@ -8,7 +8,7 @@ function computerStore(inputArr) {
         }
         let price = Number(command);
         if (price < 0) {
-            console.log('Invalid Price!');
+            console.log('Invalid price!');
             command = inputArr.shift();
             continue;
         }
@@ -17,7 +17,7 @@ function computerStore(inputArr) {
     }
     
     if (sum === 0) {
-        console.log('Invalid Order!');
+        console.log('Invalid order!');
     } else {
         let taxes = sum * 0.2;
         let totalPrice = sum * 1.2;

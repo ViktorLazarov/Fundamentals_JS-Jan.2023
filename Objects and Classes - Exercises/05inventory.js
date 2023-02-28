@@ -13,6 +13,7 @@ function inventory(data) {
         let hero = new Hero(name, level, items);
         heroesData.push(hero);
     }
+    
     heroesData.sort((heroA, heroB) => heroA.level - heroB.level)
     for (const hero of heroesData) {
         console.log(`Hero: ${hero.name}`);

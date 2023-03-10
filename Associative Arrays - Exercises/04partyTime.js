@@ -23,7 +23,6 @@ function partyTime(data) {
 
 partyTime(['7IK9Yo0h',
            '9NoBUajQ',
-           '9NoBUajQ',
            'Ce8vwPmE',
            'SVQXQCbc',
            'tSzE5t0p',

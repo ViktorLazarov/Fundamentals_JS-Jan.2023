@@ -10,7 +10,9 @@ function piccolo(data) {
             parkingLot.delete(carNumber);
         }
     }
+    
     let sorted = Array.from(parkingLot).sort();
+
     if (parkingLot.size === 0) {
         console.log('Parking Lot is Empty');
     } else {

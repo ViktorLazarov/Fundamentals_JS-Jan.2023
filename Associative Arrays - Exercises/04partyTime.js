@@ -1,22 +1,37 @@
 function partyTime(data) {
-    let partyList = [];
+    let partyList = {
+        'vip': [],
+        'regular': [],
+    };
     let command = data.shift();
 
     while (command !== 'PARTY') {
-        partyList.push(command);
+        if (!isNaN(command[0])) {
+            partyList.vip.push(command);
+        } else {
+            partyList.regular.push(command);
+        }
         command = data.shift()
     }
+    
    
     for (const guest of data) {
-        if (partyList.includes(guest)) {
-            partyList.splice(partyList.indexOf(guest),1);
+        if (!isNaN(guest[0])) {
+            if (partyList.vip.includes(guest)) {
+                partyList.vip.splice(partyList.vip.indexOf(guest),1);
+            }
+        }else {
+            partyList.regular.splice(partyList.regular.indexOf(guest),1);
         }
     }
     
-    let sorted = partyList.sort();
-    console.log(sorted.length);
-    for (const guest of sorted) {
-        console.log(guest);
+    let size = partyList.vip.length + partyList.regular.length;
+    console.log(size);
+    for (const vipGuest of partyList.vip) {
+        console.log(vipGuest);
+    }
+    for (const regGuest of partyList.regular) {
+        console.log(regGuest);
     }
 
 }

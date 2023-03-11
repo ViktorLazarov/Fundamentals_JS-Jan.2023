@@ -16,10 +16,9 @@ function partyTime(data) {
     
    
     for (const guest of data) {
-        if (!isNaN(guest[0])) {
-            if (partyList.vip.includes(guest)) {
-                partyList.vip.splice(partyList.vip.indexOf(guest),1);
-            }
+        if (!isNaN(guest[0])) {   
+            partyList.vip.splice(partyList.vip.indexOf(guest),1);
+            
         }else {
             partyList.regular.splice(partyList.regular.indexOf(guest),1);
         }

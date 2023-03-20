@@ -1,13 +1,14 @@
 function matchFullName(input) {
-    let regex = /\b[A-Z][a-z]+ [A-Z][a-z]+\b/g;
-    // let result = input.match(regex);
+    let pattern = /\b[A-Z][a-z]+ [A-Z][a-z]+\b/g;
+    // let result = input.match(pattern);
 
     // console.log(result.join(' '));
     let result = [];
-    let validName = regex.exec(input);
+    let validName = pattern.exec(input);
+    
     while (validName !== null) {
         result.push(validName);
-        validName = regex.exec(input);
+        validName = pattern.exec(input);
     }
     console.log(result.join(' '));
     

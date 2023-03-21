@@ -1,17 +1,18 @@
 function gameBar(input) {
-    let pattern = /%(?<name>[A-Z][a-z]+)%(?:[^\|$%.])*<(?<product>[A-Z][a-z]+)>(?:[^\|$%.])*\|(?<count>\d+)\|(?:[^\|$%.0-9])*(?<price>[0-9.]+)\$/;
+    let pattern = /%(?<name>[A-Z][a-z]+)%[^|$%.]*<(?<product>\w+)>[^|$%.]*\|(?<count>\d+)\|[^|$%.0-9]*(?<price>[0-9]+.?\d*)\$/;
     let totalIncome = 0;
     for (let line of input) {
+        let match = [];
         if (line === 'end of shift') {
             break;
         }
 
         if (pattern.test(line)) {
-            let order = pattern.exec(line);
-            let name = order.groups.name;
-            let product = order.groups.product;
-            let count = order.groups.count;
-            let price = order.groups.price;
+            match = line.match(pattern);
+            let name = match.groups.name;
+            let product = match.groups.product;
+            let count = match.groups.count;
+            let price = match.groups.price;
             let totalPrice = count * price;
             console.log(`${name}: ${product} - ${totalPrice.toFixed(2)}`);
             totalIncome += totalPrice;

@@ -1,12 +1,10 @@
 function starEnigma(input) {
     let messageCount = Number(input.shift());
     let starCountPattern = /[STARstar]/g;
-    // let attackedPlanets = 0;
-    // let destroyedPlanets = 0;
+    
     let attackedPlanetsList = new Set();
     let destroyedPlanetsList = new Set();
-    // let planetPattern = /(?<=@)(?<name>[A-Za-z]+)[^@\-!:>]*:(?<population>\d+)!(?<type>[A|D])!->(?<count>\d+)/;
-    // let planetPattern = /(?<name>[A-Za-z]+)[^@\-!:>]*:(?<population>\d+)!(?<type>[AD])!->(?<count>\d+)/;
+    
     let planetPattern = /[^@\-!:>\s]*@(?<name>[A-Za-z]+)[^@\-!:>]*:(?<population>\d+)[^@\-!:>\s]*!(?<type>[A|D])![^@\-!:>\s]*\->(?<count>\d+)/;
     
     
@@ -30,11 +28,11 @@ function starEnigma(input) {
             let match = newMessage.match(planetPattern);
 
             if (match.groups.type === 'A') {
-                // attackedPlanets ++;
                 attackedPlanetsList.add(match.groups.name)
+
             } else if(match.groups.type === 'D'){
-                // destroyedPlanets ++;
                 destroyedPlanetsList.add(match.groups.name)
+                
             }
         }
     }

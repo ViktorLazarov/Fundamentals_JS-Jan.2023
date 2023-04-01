@@ -6,7 +6,7 @@ function revealWord(input1, input2) {
         for (let j = 0; j < sentenceWords.length; j++) {
             let inputWord = inputWords[i];
             let replacedWord = sentenceWords[j];
-            debugger
+            
             if (inputWord.length === replacedWord.length && replacedWord.includes('*')) {
                 sentenceWords[j] = inputWord;
             }

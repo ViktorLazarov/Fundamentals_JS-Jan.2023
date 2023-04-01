@@ -4,6 +4,7 @@ function extractFile(input) {
     let dotIndex = file.lastIndexOf('.');
     let fileName = file.substring(0,dotIndex);
     let fileExtension = file.substring(dotIndex+1)
+    
     console.log(`File name: ${fileName}`);
     console.log(`File extension: ${fileExtension}`);
     

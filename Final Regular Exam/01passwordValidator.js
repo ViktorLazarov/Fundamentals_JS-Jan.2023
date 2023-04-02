@@ -5,6 +5,7 @@ function passwordValidator(input) {
         let tokens = line.split(' ');
         let command = tokens[0];
         let values = tokens.slice(1);
+        debugger
         switch (command) {
             case 'Replace': {
                 let char = values[0];
@@ -52,7 +53,7 @@ function passwordValidator(input) {
                 break;
             }
             case 'Validation': {
-                
+
                 if (userPassword.length < 8) {
                     console.log(`Password must be at least 8 characters long!`);
                 }
@@ -60,7 +61,7 @@ function passwordValidator(input) {
                 let isValid = false;
                 for (const char of userPassword) {
                     let charValue = char.charCodeAt(0);
-                    if ((charValue >= 48 || charValue <= 57) || (charValue >= 65 || charValue <= 90) || (charValue >= 97 || charValue <= 122) || charValue == 95) {
+                    if ((charValue >= 48 && charValue <= 57) || (charValue >= 65 && charValue <= 90) || (charValue >= 97 && charValue <= 122) || charValue === 95) {
                         isValid = true;
                     } else {
                         isValid = false;
@@ -69,7 +70,7 @@ function passwordValidator(input) {
                 if (!isValid) {
                     console.log(`Password must consist only of letters, digits and _!`);
                 }
-                
+
                 let isUpper = false;
                 for (const char of userPassword) {
                     let charValue = char.charCodeAt(0);
@@ -105,35 +106,37 @@ function passwordValidator(input) {
                 if (!isDigit) {
                     console.log(`Password must consist at least one digit!`);
                 }
+                break;
 
             }
-            
+            case 'Complete': return;
+
         }
     }
 }
 
-passwordValidator((['invalidpassword*',
+// passwordValidator((['invalidpassword*',
 
-    'Add 2 p',
+//     'Add 2 p',
 
-    'Replace i -50',
+//     'Replace i -50',
 
-    'Replace * 10',
+//     'Replace * 10',
 
-    'Make Upper 2',
+//     'Make Upper 2',
+
+//     'Validation',
+//     'Complete']))
+
+
+passwordValidator((['123456789',
+
+    'Insert 3 R',
+
+    'Replace 5 15',
 
     'Validation',
 
+    'Make Lower 3',
+
     'Complete']))
-
-// passwordValidator((['123456789',
-
-//     'Insert 3 R',
-
-//     'Replace 5 15',
-
-//     'Validation',
-
-//     'Make Lower 3',
-
-//     'Complete']))
